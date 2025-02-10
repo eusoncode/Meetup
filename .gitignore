@@ -1,0 +1,27 @@
+# Byte-compiled / optimized / DLL files
+__pycache__/
+*.py[cod]
+*$py.class
+
+# Virtual environment
+venv/
+env/
+
+# Ignore the virtual environment folder
+django_meetup_env/
+
+# Django-specific files
+db.sqlite3
+*.log
+
+# Static and media files
+staticfiles/
+media/
+
+# Secret settings
+.env
+config/settings/local.py
+
+# IDE / Editor files
+.vscode/
+.idea/
