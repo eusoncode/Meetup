@@ -1,46 +1,42 @@
+{% extends 'meetup/base_template/base.html' %}
 {% load static%}
 
-<!DOCTYPE html>
-<html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>All Meetup</title>
-  <link rel="stylesheet" href="{% static 'meetup/styles/base.css' %}">
+{% block title %}All Meetup{% endblock %}
+
+{% block site_css %}
   <link rel="stylesheet" href="{% static 'meetup/styles/all-meetups.css' %}">
-</head>
-<body>
-  <header id="main-header">
-    <nav>
-      <a href="/meetup" id="main-logo"> Meetups </a>
-    </nav>
-    <h1>We got great meetups comming soon!</h1>
-    <p>Find the one that best suits your needs!</p>
-  </header>
-  <main>
-    <section>
-      <h2>Upcoming Meetups</h2>
-      <ol>
-        {% for meetup_item in meetups %}
-          <li class="meetup-item">
-            <article>
-              <div class="meetup-summary">
-                <div class="meetup-image">
-                  <img src="" alt="">
-                </div>
-                <div class="meetup-details">
-                  <h3>{{ meetup_item.title}}</h3>
-                  <address>{{ meetup_item.location}}</address>
-                </div>
+{% endblock %}
+
+{% block main_heading %}
+  We got great meetups coming soon!
+{% endblock %}
+
+{% block header_content %}
+  <p>Find the one that best suits your needs!</p>
+{% endblock %}
+
+{% block body %}
+  <section>
+    <h2>Upcoming Meetups</h2>
+    <ol>
+      {% for meetup_item in meetups %}
+        <li class="meetup-item">
+          <article>
+            <div class="meetup-summary">
+              <div class="meetup-image">
+                <img src="" alt="">
               </div>
-              <div class="meetup-actions">
-                <a href="{% url 'meetup-detail' meetup_item.slug %}" class="btn">More Details</a>
+              <div class="meetup-details">
+                <h3>{{ meetup_item.title}}</h3>
+                <address>{{ meetup_item.location}}</address>
               </div>
-            </article>
-          </li>
-        {% endfor %}
-      </ol>
-    </section>
-  </main>
-</body>
-</html>
+            </div>
+            <div class="meetup-actions">
+              <a href="{% url 'meetup-detail' meetup_item.slug %}" class="btn">More Details</a>
+            </div>
+          </article>
+        </li>
+      {% endfor %}
+    </ol>
+  </section>
+{% endblock %}
