@@ -36,11 +36,7 @@ def meetup_details(request, meetup_slug):
         selected_meetup = Meetup.objects.get(slug=meetup_slug)
         return render(request, 'meetup/meetup-details.html', {
             'meetup_found': True,
-            'meetup_title': selected_meetup.title,
-            'meetup_description': selected_meetup.description,
-            'meetup_location': selected_meetup.location.name,
-            'meetup_address': selected_meetup.location.address
-
+            'meetup': selected_meetup
         } )
     except Exception as exc:
         return render(request, 'meetup/meetup-details.html', {
