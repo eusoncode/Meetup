@@ -13,6 +13,8 @@ Meetup app built with Django
 
 
 ## Django 
-  1. Create a django admin project folder -> *django-admin startproject django_meetup*
+  1. Create and activate your virtual environment  -> *python3 -m venv django_meetup_env*, *source django_meetup_env/bin/activate*
+  2. Install Django in the overall folder for the project -> *pip install django*
+  2. Create a django admin project folder -> *django-admin startproject django_meetup*
   2. Create a django app folder inside project folder -> *python3 manage.py startapp meetup*
-  3. Create a virtual environment -> *python3 -m venv django_meetup* and run *python3 -m pip freeze > requirements.txt*
+  3.  Create a file for your dependencies run *python3 -m pip freeze > requirements.txt*
